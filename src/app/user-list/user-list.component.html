@@ -1,0 +1,26 @@
+<div>
+  <input type="text" [(ngModel)]="searchQuery" placeholder="Filtrar por nome" (input)="filterUsers()">
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Email</th>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Avatar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of filteredUsers">
+      <td>{{ user.id }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>
+        <img src="{{ user.avatar }}" alt="{{ user.first_name }} {{ user.last_name }}" width="50" height="50">
+      </td>
+    </tr>
+  </tbody>
+</table>
